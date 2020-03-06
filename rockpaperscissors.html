@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+    let compSelection = Math.floor(Math.random()*3);
+    function computerPlay() {
+        if (compSelection == 1) {
+            compSelection = 'Rock';
+        }
+        else if (compSelection == 2) {
+            compSelection = 'Paper';
+        }
+        else {
+            compSelection = 'Scissors';
+        }
+    }
+    function letsPlay(compChoice,playerChoice) {
+        playerChoice = prompt('Rock, Paper, or Scissors? (r/p/s)');
+        computerPlay();
+        if (playerChoice.toLowerCase() == 'r' && compSelection == 'Scissors') {
+            return `You win! The computer chose ${compSelection}`;
+        }
+        else if (playerChoice.toLowerCase() == compSelection.charAt(0).toLowerCase()) {
+            return `It\'s a draw this time.  The computer also chose ${compSelection}`;
+        }
+        else {
+            return `You lose!  The computer chose ${compSelection}`;
+        }
+    }
+  </script>
+</body>
+</html>
